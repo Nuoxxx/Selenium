@@ -1,5 +1,5 @@
 # coding = utf-8
-#  通过defaultTestLoader加载以特定命名规则的.py文件
+#  通过defaultTestLoader.discover加载以特定命名规则的.py文件
 import sys,time,os
 import unittest
 import HTMLTestRunner
