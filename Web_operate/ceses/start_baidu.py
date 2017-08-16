@@ -11,7 +11,7 @@ import HTMLTestRunner
 class Baidu(unittest.TestCase):
     #测试前的初始化工作
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
         #隐式等待，如果在30S内页面加载完成，进行后续代码；最多等待30S，然后进行后续代码
         #隐性等待对整个driver的周期都起作用
         self.driver.implicitly_wait(30)
@@ -44,19 +44,19 @@ class Baidu(unittest.TestCase):
         self.assertEqual([], self.verificationErrors)
 
 if __name__ == "__main__":
-    # unittest.main()
-    suite = unittest.TestSuite()
-
-    suite.addTest(Baidu("test_baidu"))
-    suite.addTest(Baidu("test_news"))
-
-    #获取当前时间
-    now = time.strftime("%Y-%m-%M-%H_%M_%S",time.localtime(time.time()))
-    #把当前时间加到报告中
-    filename = 'D:\\Selenium_python\\test_case\\'+now+'result.html'
-    fp = open(filename,'wb')
-
-    runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title=u'百度测试',description=u'用例执行')
-
-    runner.run(suite)
+    unittest.main()
+    # suite = unittest.TestSuite()
+    #
+    # suite.addTest(Baidu("test_baidu"))
+    # suite.addTest(Baidu("test_news"))
+    #
+    # #获取当前时间
+    # now = time.strftime("%Y-%m-%M-%H_%M_%S",time.localtime(time.time()))
+    # #把当前时间加到报告中
+    # filename = 'D:\\Selenium_python\\test_case\\'+now+'result.html'
+    # fp = open(filename,'wb')
+    #
+    # runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title=u'百度测试',description=u'用例执行')
+    #
+    # runner.run(suite)
 

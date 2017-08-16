@@ -1,10 +1,10 @@
 # coding = utf-8
-
-import sys,time
+# 通过defaultTestLoader加载以特定命名规则的.py文件
+import sys,time,os
 import unittest
 import HTMLTestRunner
 
-filenameaa = 'D:\Selenium_python\ceses'
+filenameaa = os.path.abspath(os.path.join(os.path.abspath(__file__),'../ceses'))
 def createsuitell():
     testsuite = unittest.TestSuite()
 
@@ -19,7 +19,7 @@ def createsuitell():
 alltestnames = createsuitell()
 
 now = time.strftime('%Y-%m-%M_%H_%M_%S',time.localtime(time.time()))
-filename = 'D:\\Selenium_python\\report\\'+now+'result.html'
+filename = os.path.abspath(os.path.join(os.path.abspath(__file__),'../report/'+now+"result.html"))
 fp = open(filename,'wb')
 
 runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title=u'测试报告',description='用例执行情况')
