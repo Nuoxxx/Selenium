@@ -17,5 +17,5 @@ testsuite.addTest(unittest.makeSuite(youdao.Youdao))
 filename = os.path.abspath(os.path.join(os.path.abspath(__file__),"../report/result.html"))
 fp = open(filename,'wb')
 
-runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title=u'测试报告',description='用例执行情况')
+runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title=u'测试报告',description=u'用例执行情况')
 runner.run(testsuite)
